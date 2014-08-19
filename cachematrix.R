@@ -1,7 +1,11 @@
-## Put comments here that give an overall description of what your
-## functions do
+## makeCacheMatrix creates special "matrix" whereas the cacheSolve returns the inverse of the
+## matrix from cache, if it exists there. if not, it computes the inverse and returns it.
 
-## Write a short comment describing this function
+## makeCacheMatrix creates a special "matrix" ,which is a list containing a function to
+## 1. set the value of the matrix
+## 2. get the value of the matrix
+## 3. set the inverse of the matrix
+## 4. get the inverse of the matrix
 
 makeCacheMatrix <- function(x = matrix()) {
         inv <- NULL
@@ -19,7 +23,8 @@ makeCacheMatrix <- function(x = matrix()) {
 }
 
 
-## Write a short comment describing this function
+## cacheSolve returns the inverse of a matrix if it exists in the cache. 
+## if not, it computes the inverse and returns it
 
 cacheSolve <- function(x, ...) {
         ## Return a matrix that is the inverse of 'x'
@@ -34,6 +39,8 @@ cacheSolve <- function(x, ...) {
         inv
 }
 
+## Test both functions with test data
 a = matrix( c(4,10,23,12), nrow=2, ncol=2) 
 mat <- makeCacheMatrix(a)
+cacheSolve(mat)
 cacheSolve(mat)
